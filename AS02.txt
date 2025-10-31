@@ -1,0 +1,20 @@
+DECLARE List: ARRAY[1:3,1:3] OF INTEGER
+DECLARE Value_To_Find: INTEGER
+DECLARE Found: BOOLEAN
+
+List ← [[12, 24, 34], [21, 46, 38], [54,60,81]]
+Value_To_Find <-- 54
+Found ← FALSE
+
+FOR i ← 1 TO LENGTH (List)
+    FOR j ← 1 TO LENGTH (List[i])
+        IF List[i,j] = Value_To_Find
+            THEN
+            Found ← TRUE
+            OUTPUT Value_To_Find & " is found at row " & i & ", column " & j
+        ENDIF
+    NEXT j
+NEXT i
+IF Found = FALSE THEN
+    OUTPUT Value_To_Find & "is not found"
+ENDIF
